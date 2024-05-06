@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/fppb.css">
+
 
   <link rel="stylesheet" href="../assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
@@ -91,7 +93,7 @@
                 <a href="index.php?p=barang"><i class="fa fa-circle-o"></i><span>Stok Barang</span> </a>
                 </li>
               <li><a href="index.php?p=barang_masuk_keluar"><i class="fa fa-circle-o"></i><span>Barang Masuk/Keluar</span> </a></li>
-              <li><a href="index.php?p=barang_fppb"><i class="fa fa-circle-o"></i><span>Dokumen FPPB</span> </a></li>
+              <li><a href="index.php?p=dokumen_fppb"><i class="fa fa-circle-o"></i><span>Dokumen FPPB</span> </a></li>
               <li><a href="index.php?p=barang_fppp"><i class="fa fa-circle-o"></i><span>Dokumen FPPP</span> </a></li>
           
               <li><a href="index.php?p=user"><i class="fa fa-circle-o"></i><span>Data Pelanggan</span> </a></li>            
