@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Administrator - Sistem Informasi Akuntansi</title>
-  
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
@@ -95,9 +94,7 @@
               <li><a href="index.php?p=barang_fppb"><i class="fa fa-circle-o"></i><span>Dokumen FPPB</span> </a></li>
               <li><a href="index.php?p=barang_fppp"><i class="fa fa-circle-o"></i><span>Dokumen FPPP</span> </a></li>
           
-              <li><a href="index.php?p=user"><i class="fa fa-circle-o"></i><span>Data Pengguna</span> </a></li>
-              <li><a href="index.php?p=user_tambah"><i class="fa fa-circle-o"></i><span>Tambah Pengguna</span> </a></li>
-            
+              <li><a href="index.php?p=user"><i class="fa fa-circle-o"></i><span>Data Pelanggan</span> </a></li>            
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -375,6 +372,5 @@
 
 
 </script>
-  
 </body>
 </html>
