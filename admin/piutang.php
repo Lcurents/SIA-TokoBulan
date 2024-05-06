@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 
 <div class="content-wrapper">
 
@@ -179,4 +180,6 @@
     </section>
   </div>
 </section>
+
 </div>
+<?php include 'footer.php'; ?>s
