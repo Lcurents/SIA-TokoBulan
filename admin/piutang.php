@@ -1,5 +1,4 @@
-<?php include 'header.php'; ?>
-
+<div class="container">
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -48,6 +47,16 @@
                       </div>
 
                       <div class="form-group">
+                        <label>Pelanggan</label>
+                        <input name="pelanggan" required="required" class="form-control">
+                      </div>
+
+                      <div class="form-group">
+                        <label>Kode Pelanggan</label>
+                        <input name="kpelanggan" required="required" class="form-control">
+                      </div>
+
+                      <div class="form-group">
                         <label>Nominal</label>
                         <input type="number" name="nominal" required="required" class="form-control" placeholder="Masukkan Nominal ..">
                       </div>
@@ -75,6 +84,7 @@
                     <th width="1%">NO</th>
                     <th width="1%">KODE</th>
                     <th width="10%" class="text-center">TANGGAL</th>
+                    <th width="10%" class="text-center">PELANGGAN</th>
                     <th class="text-center">KETERANGAN</th>
                     <th class="text-center">NOMINAL</th>
                     <th width="10%" class="text-center">OPSI</th>
@@ -89,23 +99,23 @@
                     ?>
                     <tr>
                       <td class="text-center"><?php echo $no++; ?></td>
-                      <td>PTG-000<?php echo $d['piutang_id']; ?></td>
-                      <td class="text-center"><?php echo date('d-m-Y', strtotime($d['piutang_tanggal'])); ?></td>
-                      <td><?php echo $d['piutang_keterangan']; ?></td>
-                      <td class="text-center"><?php echo "Rp. ".number_format($d['piutang_nominal'])." ,-"; ?></td>
-                      <td>    
-
-                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit_piutang_<?php echo $d['piutang_id'] ?>">
-                        <i class="fa fa-cog"></i>
+                      <td>PTG-000<?php echo $d['id']; ?></td>
+                      <td class="text-center"><?php echo date('d-m-Y', strtotime($d['tanggal_piutang'])); ?></td>
+                      <td><?php echo $d['kode_pelanggan']; ?></td>
+                      <td class="text-center"><?= $d['keterangan']; ?></td>
+                      <td class="text-center"><?php echo "Rp. ".number_format($d['nominal'])." ,-"; ?></td>
+                      
+                      <td>                
+                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit_piutang_<?php echo $d['id'] ?>">
+                          <i class="fa fa-cog"></i>
                       </button>
-
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus_piutang_<?php echo $d['piutang_id'] ?>">
-                        <i class="fa fa-trash"></i>
-                      </button>
-
+                        
+                      <a class="btn btn-danger btn-sm" href="piutang_hapus.php?id=<?php echo $d['id'] ?>"><i class="fa fa-trash"></i></a>                 
+                      </a>
+                     </td>
 
                       <form action="piutang_update.php" method="post">
-                        <div class="modal fade" id="edit_piutang_<?php echo $d['piutang_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="edit_piutang_<?php echo $d['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -118,18 +128,23 @@
 
                                 <div class="form-group" style="width:100%;margin-bottom:20px">
                                   <label>Tanggal</label>
-                                  <input type="hidden" name="id" value="<?php echo $d['piutang_id'] ?>">
-                                  <input type="text" style="width:100%" name="tanggal" required="required" class="form-control datepicker2" value="<?php echo $d['piutang_tanggal'] ?>">
+                                  <input type="hidden" name="id" value="<?php echo $d['id'] ?>">
+                                  <input type="text" style="width:100%" name="tanggal" required="required" class="form-control datepicker2" value="<?php echo $d['tanggal_piutang'] ?>">
+                                </div>
+
+                               <div class="form-group" style="width:100%;margin-bottom:20px">
+                                  <label>Pelanggan</label>
+                                  <input type="text" style="width:100%" name="pelanggan" required="required" class="form-control datepicker2" value="<?php echo $d['kode_pelanggan'] ?>">
                                 </div>
 
                                 <div class="form-group" style="width:100%;margin-bottom:20px">
                                   <label>Nominal</label>
-                                  <input type="number" style="width:100%" name="nominal" required="required" class="form-control" placeholder="Masukkan Nominal .." value="<?php echo $d['piutang_nominal'] ?>">
+                                  <input type="number" style="width:100%" name="nominal" required="required" class="form-control" placeholder="Masukkan Nominal .." value="<?php echo $d['nominal'] ?>">
                                 </div>
 
                                 <div class="form-group" style="width:100%">
                                   <label>Keterangan</label>
-                                  <textarea name="keterangan" style="width:100%" class="form-control" rows="4"><?php echo $d['piutang_keterangan'] ?></textarea>
+                                  <textarea name="keterangan" style="width:100%" class="form-control" rows="4"><?php echo $d['keterangan'] ?></textarea>
                                 </div>
 
 
@@ -180,6 +195,5 @@
     </section>
   </div>
 </section>
-
 </div>
-<?php include 'footer.php'; ?>s
+</div>
